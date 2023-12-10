@@ -1,7 +1,6 @@
 package cologne.manu.ps_security.Controller;
 
 import cologne.manu.ps_security.Model.SampleDataContainer;
-import cologne.manu.ps_security.Services.SampleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -15,15 +14,15 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class SampleControllerImpl implements SampleController {
 
-    private final SampleService sampleService;
-
     @GetMapping(
         path = "/",
         produces = MediaType.APPLICATION_JSON_VALUE
     )
     @Override
     public Mono<SampleDataContainer> getSampleData() {
-        return sampleService.getSampleData();
+        var data = new SampleDataContainer();
+        data.setSampleDataString("Some sample string");
+        return Mono.just(data);
     }
 
 }
