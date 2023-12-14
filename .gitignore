@@ -3,7 +3,7 @@ HELP.md
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/test/**/build/
-**/src/resources/application.yml
+**/src/main/resources/application.yml
 
 
 ### STS ###
