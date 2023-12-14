@@ -1,6 +1,3 @@
-logging:
-  level:
-    '[cologne.manu]': debug
 spring:
   security:
     oauth2:
